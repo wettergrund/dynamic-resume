@@ -6,7 +6,8 @@ body{
 header,
 img,
 footer,
-.hidden-option
+.hidden-option,
+.skill-tags
 {
     display: none;
 }

@@ -21,8 +21,14 @@
     --scnd-clr: hsl(30, 100%, 90%);
     --accent-clr: hsl(22, 100%, 50%);
 
+    /* --bg-clr: #f5e6c5;
+    --primary-clr: #3f422e;
+    --scnd-clr: #9f886f;
+    --accent-clr: #d78b30; */
+
     --prim-font: "Montserrat", sans-serif;
     background-color: hsl(0, 0%, 50%);
+    /* background-color: #f5f1e9; */
   }
 
 body {
@@ -50,21 +56,46 @@ h1 {
 }
 
 h2 {
+  position: relative;
+
+
   margin: .5em 0;
   max-width: 90vw;
-  
   font-weight: 300;
   font-size: 1.5rem;
+  
 }
 
 h3 {
-  margin: 0;
+  margin: 1rem 0 0 0;
+
+  font-weight: 800;
+  font-size: 1rem;
 }
 
 h4{
   margin-bottom: 0;
 }
 
+small{
+  margin: 0;
+
+}
+
+h2[id^='company-']{
+  margin: 2rem 0 0 ;
+}
+
+
+.work-container > h2:first-child, 
+.edu-container > h2:first-child{
+  width: fit-content;
+  background: var(--accent-clr);
+  color: var(--bg-clr);
+
+  padding: 0 .3rem;
+  font-weight: 800;
+}
 
 /* 3 Components */
 
@@ -217,30 +248,40 @@ nav ul {
 }
 
 .company-icon{
-  position: relative;
+  position: absolute;
   
-  left: -.5rem;
-  height: 2rem;
-  width: 2rem;
+  top: -.5em;
+  left: -4rem;
+  height: 3rem;
+  width: 3rem;
 
-  border-radius: 100%;
+  border-radius: 50%;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.137);
 }
 
 .skill-tags{
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
-  gap: 1rem;
+  gap: .5rem;
 }
 
 .tag{
 
-  font-size: .7rem;
-
-  background: grey;
+  font-size: .8rem;
+  font-weight: 600;
+  background: var(--scnd-clr);
   padding: .25rem .5rem;
+  /* border: 1px solid var(--primary-clr); */
   border-radius: .25rem;
 
+  /* box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.137); */
+
+}
+
+.work-container > :last-child,
+.edu-container  > :last-child{
+  margin-bottom: 4rem;
 }
 
 
@@ -371,6 +412,9 @@ footer a{
 
   opacity: .05;
 }
+
+
+
 
 
 /* 3.3 modals */

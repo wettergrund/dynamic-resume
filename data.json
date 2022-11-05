@@ -8,7 +8,7 @@
           "subject":"Fullstackutvecklare .NET",
           "description":"Fullstackutveckling med fokus på .NET/C#, men täcker även HTML, CSS, JS och agila metoder.",
           "location":"Stockholm",
-          "skills":[".NET","C#"],
+          "skills":[".NET","C#","HTML","CSS","JavaScript"],
           "current":true
        }
     ],
@@ -23,8 +23,7 @@
                 "description":"IT Security Specialist inom (IAM) Identity and Access Managament-området med fokus på Segregation of Duties och hantera audit-anmärkningar.",
                 "skills":[
                    "RACF",
-                   "Mainframe",
-                   "Access Management"
+                   "Mainframe"
                 ],
                 "start":1601510400,
                 "end":0,

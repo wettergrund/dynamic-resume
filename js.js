@@ -1,4 +1,4 @@
-let roleid = 0;
+let roleid = 1;
 
 async function getMyCV(){
 
@@ -42,36 +42,36 @@ function displayCV(data){
         header.prepend(icon);
 
 
+
         /* for each role */
 
         let positions = work[i].pos
 
-        for (let i = 0; i < positions.length; i++) {
-
+        positions.forEach(position => {
             
+            const startYear = returnMonth(toMs(position.start).getUTCMonth()) + " " + toMs(position.start).getUTCFullYear();
 
-            const startYear = toMs(positions[i].start).getUTCFullYear()
+            endYear = () => (position.current) ? "tills vidare" : returnMonth(toMs(position.end).getUTCMonth()) + " " + toMs(position.end).getUTCFullYear();
 
-            endYear = () => (positions[i].current) ? "nuvarande!" : toMs(positions[i].end).getUTCFullYear();
 
             // rubrik
             const h3 = document.createElement('h3');
-            h3.innerText = positions[i].role;
+            h3.innerText = position.role;
             // datum
-            const posYears = document.createElement('p');
-            posYears.innerText = `${startYear} - ${endYear()} `
+            const posYears = document.createElement('small');
+            posYears.innerText = `${startYear} - ${endYear()} `;
             
             // description
             const p = document.createElement('p');
-            p.innerText = positions[i].description;
+            p.innerText = position.description;
 
-            console.table(positions[i]);
+            console.table(position);
             
             container.appendChild(h3);
             container.appendChild(posYears);
             container.appendChild(p);
 
-            let keySkills = positions[i].skills
+            let keySkills = position.skills;
             
 
             if(keySkills.length > 0){
@@ -86,25 +86,24 @@ function displayCV(data){
 
                 roleid++
 
-
-                for (let i = 0; i < keySkills.length; i++) {
+                keySkills.forEach(skill => {
                     const div = document.createElement('div');
                     div.setAttribute("class", "tag");
-                    div.innerText = keySkills[i];
+                    div.innerText = skill;
 
                     skillContainer.appendChild(div);
 
                     // console.log(keySkills[i])
                     
-                }
-            }
-        }
-    }
-}
+                });
+            };
+        });
+    };
+};
 
 
 function displayEDU(data){
-    const container = document.querySelector('.edu-container')
+    const container = document.querySelector('.edu-container');
     let edu = data.edu;
 
     for (let i = 0; i < edu.length; i++) {
@@ -112,7 +111,7 @@ function displayEDU(data){
         const small = document.createElement('small');
             
 
-        const eduYears = [toMs(edu[i].start).getUTCFullYear(),toMs(edu[i].end).getUTCFullYear()]
+        const eduYears = [toMs(edu[i].start).getUTCFullYear(),toMs(edu[i].end).getUTCFullYear()];
 
         console.log(edu[i].school)
 
@@ -123,8 +122,8 @@ function displayEDU(data){
         container.appendChild(small)
 
         // datum
-        const posYears = document.createElement('p');
-        posYears.innerText = `${eduYears[0]} - ${eduYears[1]} `
+        const posYears = document.createElement('small');
+        posYears.innerText = ` | ${eduYears[0]} - ${eduYears[1]} `
         
         // description
         const p = document.createElement('p');
@@ -138,7 +137,6 @@ function displayEDU(data){
 
 
         let keySkills = edu[i].skills;
-        console.log(keySkills.length)
 
         if(keySkills.length > 0){
             // Crate area for skill tags
@@ -150,7 +148,7 @@ function displayEDU(data){
 
             const skillContainer = document.querySelector(`#position-${roleid}`);
 
-            roleid++
+            roleid++;
 
 
             for (let i = 0; i < keySkills.length; i++) {
@@ -169,3 +167,9 @@ function displayEDU(data){
 
 getMyCV()
 
+
+
+function returnMonth(month){
+    const months = ["Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"];
+    return months[month];
+}
