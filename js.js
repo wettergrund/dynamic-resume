@@ -3,8 +3,6 @@ let roleid = 1;
 async function getMyCV(){
 
     await fetch('data.json')
-    // .then((response) => response.json())
-    // .then((data) => console.table(data))
 
     let response = await fetch('data.json');
     let data = await response.json();
@@ -17,86 +15,39 @@ toMs = (seconds) => new Date(seconds * 1000);
 
 function displayCV(data){
     const container = document.querySelector('.work-container')
-    const work = data.work
-    
-    for (let i = 0; i < work.length; i++) {
-        const h2 = document.createElement('h2');
-        const small = document.createElement('small');
-        
+
+
+    // For-loop to display data for each employer
+    const employer = data.work
+
+    for (let i = 0; i < employer.length; i++) {
+        // Generate company header and location
+        generateElement('h2',employer[i].company,container,'id',"company-" + i)
+        generateElement('small',employer[i].location,container)
+
+        // Generate company icon
         const icon = document.createElement('img');
         icon.setAttribute("class","company-icon")
-        icon.setAttribute("alt", work[i].company + " logotyp")
-        icon.setAttribute("src", "images/" + work[i].img)
-
-        console.log(work[i].company)
-
-        h2.setAttribute("id","company-" + i)
-        h2.innerText = work[i].company;
-        small.innerText = work[i].location;
-
-        container.appendChild(h2);
-        container.appendChild(small);
-
+        icon.setAttribute("alt", employer[i].company + " logotyp")
+        icon.setAttribute("src", "images/" + employer[i].img)
         const header = document.querySelector("#company-" + i);
-
         header.prepend(icon);
 
-
-
-        /* for each role */
-
-        let positions = work[i].pos
+        // forEach-loop to display position(s) at each 
+        let positions = employer[i].positions
 
         positions.forEach(position => {
             
             const startYear = returnMonth(toMs(position.start).getUTCMonth()) + " " + toMs(position.start).getUTCFullYear();
-
             endYear = () => (position.current) ? "tills vidare" : returnMonth(toMs(position.end).getUTCMonth()) + " " + toMs(position.end).getUTCFullYear();
 
+            // Generate role header, working years and description
+            generateElement('h3',position.role,container)
+            generateElement('small',`${startYear} - ${endYear()}`,container)
+            generateElement('p', position.description, container)
 
-            // rubrik
-            const h3 = document.createElement('h3');
-            h3.innerText = position.role;
-            // datum
-            const posYears = document.createElement('small');
-            posYears.innerText = `${startYear} - ${endYear()} `;
-            
-            // description
-            const p = document.createElement('p');
-            p.innerText = position.description;
+            generateSkills(position.skills , container)
 
-            console.table(position);
-            
-            container.appendChild(h3);
-            container.appendChild(posYears);
-            container.appendChild(p);
-
-            let keySkills = position.skills;
-            
-
-            if(keySkills.length > 0){
-                // Crate area for skill tags
-                const skillTags = document.createElement('div');
-                skillTags.setAttribute("class", "skill-tags");
-                skillTags.setAttribute("id", `position-${roleid}`);
-
-                container.appendChild(skillTags);
-
-                const skillContainer = document.querySelector(`#position-${roleid}`);
-
-                roleid++
-
-                keySkills.forEach(skill => {
-                    const div = document.createElement('div');
-                    div.setAttribute("class", "tag");
-                    div.innerText = skill;
-
-                    skillContainer.appendChild(div);
-
-                    // console.log(keySkills[i])
-                    
-                });
-            };
         });
     };
 };
@@ -107,69 +58,59 @@ function displayEDU(data){
     let edu = data.edu;
 
     for (let i = 0; i < edu.length; i++) {
-        const h2 = document.createElement('h2');
-        const small = document.createElement('small');
-            
+
+        // Generate education header and years
+        generateElement('h2', edu[i].school, container)
+        generateElement('small', edu[i].location, container)
 
         const eduYears = [toMs(edu[i].start).getUTCFullYear(),toMs(edu[i].end).getUTCFullYear()];
 
-        console.log(edu[i].school)
+        // Generate education years and description
+        generateElement('small', ` | ${eduYears[0]} - ${eduYears[1]} ` , container)
+        generateElement('p', edu[i].description, container)
 
-        h2.innerText = edu[i].school;
-        small.innerText = edu[i].location;
-
-        container.appendChild(h2)
-        container.appendChild(small)
-
-        // datum
-        const posYears = document.createElement('small');
-        posYears.innerText = ` | ${eduYears[0]} - ${eduYears[1]} `
-        
-        // description
-        const p = document.createElement('p');
-        p.innerText = edu[i].description;
-
-        console.table(edu[i]);
-        
-       
-        container.appendChild(posYears);
-        container.appendChild(p);
-
-
-        let keySkills = edu[i].skills;
-
-        if(keySkills.length > 0){
-            // Crate area for skill tags
-            const skillTags = document.createElement('div');
-            skillTags.setAttribute("class", "skill-tags");
-            skillTags.setAttribute("id", `position-${roleid}`);
-
-            container.appendChild(skillTags);
-
-            const skillContainer = document.querySelector(`#position-${roleid}`);
-
-            roleid++;
-
-
-            for (let i = 0; i < keySkills.length; i++) {
-                const div = document.createElement('div');
-                div.setAttribute("class", "tag");
-                div.innerText = keySkills[i];
-
-                skillContainer.appendChild(div);
-
-                // console.log(keySkills[i])
-                
-            }
-        }
+        generateSkills(edu[i].skills, container)
     }
 }
 
 getMyCV()
 
-
-
 function returnMonth(month){
     const months = ["Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"];
     return months[month];
+}
+
+function generateElement(element, content, parent, att, val, att2, val2){
+    // Function for generating a new element. Support for two setAttributes
+
+    element = document.createElement(element);
+    element.innerText = content;
+
+    if(att !== undefined){
+        console.log("Hello");
+        element.setAttribute(att,val)
+    }
+    if(att2 !== undefined){
+        console.log("Hello");
+        element.setAttribute(att2,val2)
+    }
+    parent.appendChild(element);
+}
+
+function generateSkills(skills, container){
+    // Function to generate skill tags
+
+    if(skills.length > 0){
+        // Crate area for skill tags
+        generateElement('div', '', container,'class','skill-tags','id',`position-${roleid}`);
+
+        const skillContainer = document.querySelector(`#position-${roleid}`);
+        
+        skills.forEach(skill => {
+            generateElement('div',skill,skillContainer,'class','tag')
+        });
+
+        roleid++;
+        
+    }
 }

@@ -17,7 +17,7 @@
           "company":"Nordea",
           "location":"Stockholm",
           "img":"nordea.png",
-          "pos":[
+          "positions":[
              {
                 "role":"IT Security Specialist",
                 "description":"IT Security Specialist inom (IAM) Identity and Access Managament-området med fokus på Segregation of Duties och hantera audit-anmärkningar.",
@@ -57,7 +57,7 @@
           "company":"Tieto / Wise IT",
           "location":"Stockholm",
           "img":"tieto.jpg",
-          "pos":[
+          "positions":[
              {
                 "role":"IT Service Desk",
                 "description":"Kontrakt via Wise IT - Support för tjänstebolaget Sodexo.",
@@ -74,7 +74,7 @@
           "company":"IBM",
           "location":"Dublin, Irland",
           "img":"IBM.jpg",
-          "pos":[
+          "positions":[
              {
                 "role":"User Administration",
                 "description":"Behörighetshantering och administration av användarkonton.",
