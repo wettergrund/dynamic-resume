@@ -16,7 +16,7 @@
        {
           "company":"Nordea",
           "location":"Stockholm",
-          "img":"",
+          "img":"nordea.png",
           "pos":[
              {
                 "role":"IT Security Specialist",
@@ -57,7 +57,7 @@
        {
           "company":"Tieto / Wise IT",
           "location":"Stockholm",
-          "img":"",
+          "img":"tieto.jpg",
           "pos":[
              {
                 "role":"IT Service Desk",
@@ -74,7 +74,7 @@
        {
           "company":"IBM",
           "location":"Dublin, Irland",
-          "img":"",
+          "img":"IBM.jpg",
           "pos":[
              {
                 "role":"User Administration",
