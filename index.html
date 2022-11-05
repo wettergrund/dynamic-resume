@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jonas CV och portfolio</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="style.css"/>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&family=Ms+Madi&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- icons -->
+    <script src="https://kit.fontawesome.com/c3cb13092e.js" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    <section class="container">
+
+      <a class="hidden-option" href="#main-content">Hoppa till innehåll</a>
+
+      <header>
+        <div class="logo">.jw</div>
+        <nav>
+          <ul>
+            <li class="navbar"><a href="#" id="current-page">Hem</a></li>
+            <li class="navbar"><a href="cv.html">CV</a></li>
+            <li class="navbar"><a href="portfolio.html">Portfolio</a></li>
+            <li class="navbar"><a href="interests.html">Intressen</a></li>
+          </ul>
+        </nav>
+      </header>
+
+
+      <main class="grid-page">
+        <section class="content-area">
+          <h1 id="main-content">Er nästa<br> fullstack-<br> utvecklare</h1>
+          <h2>
+            Jag utbildar mig till fullstackutveckare med kompetens inom bland
+            annat .NET och C#.
+          </h2>
+          <div class="button-area">
+            <a href="cv.html" class="btn prim-btn">CV</a>
+            <a href="#contact-form" class="btn">Kontakt</a>
+
+            <!-- Contact-modal -->
+
+            <div class="modal-box" id="contact-form">
+              <div>
+                <i class="fa-solid fa-phone"></i> 073-908 77 xx
+              </div>
+              <div>
+                <a href="mailto:jonas.wettergrund@chasacademy.se"><i class="fa-solid fa-at"></i> jonas@mail.se</a> 
+              </div>
+              <div>
+                <a href="https://www.linkedin.com/in/jonas-wettergrund-9bb35931/" target="_blank"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a> 
+              </div>
+              <div>
+                <a href="https://github.com/wettergrund/" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+              </div>
+              <a href="#close" title="close" class="close-btn"><i class="fa-solid fa-circle-xmark"></i></a>
+            </div>
+          </div>
+
+        </section>
+        <aside class="side-image">
+          <img src="images/genericcoder.png"/>
+        </aside>
+      </main>
+    </section>
+
+
+    <section class="testimonials">
+      <article class="card quote">
+        <div><img src="images/genericperson.jpg" alt=""></div>
+        <div><p>- Det har varit ett nöje att ha Jonas som kollega 😊</p></div>
+      </article>
+      <article class="card quote">
+        <div><img src="images/genericperson.jpg" alt=""></div>
+        <div><p>- Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, corporis!</p></div>
+      </article>
+    </section>
+
+
+    <footer>
+      <a href="https://www.linkedin.com/in/jonas-wettergrund-9bb35931/" target="_blank">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+      <a href="https://github.com/wettergrund/" target="_blank">
+        <i class="fa-brands fa-github"></i>
+      </a>
+    </footer>
+  </body>
+</html>

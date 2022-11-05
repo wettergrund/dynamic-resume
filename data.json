@@ -1,0 +1,102 @@
+{
+    "edu":[
+       {
+          "school":"Chas Academy",
+          "img":"",
+          "start":1661990400,
+          "end":1717200000,
+          "subject":"Fullstackutvecklare .NET",
+          "description":"Fullstackutveckling med fokus på .NET/C#, men täcker även HTML, CSS, JS och agila metoder.",
+          "location":"Stockholm",
+          "skills":[".NET","C#"],
+          "current":true
+       }
+    ],
+    "work":[
+       {
+          "company":"Nordea",
+          "location":"Stockholm",
+          "img":"",
+          "pos":[
+             {
+                "role":"IT Security Specialist",
+                "description":"IT Security Specialist inom (IAM) Identity and Access Managament-området med fokus på Segregation of Duties och hantera audit-anmärkningar.",
+                "skills":[
+                   "RACF",
+                   "Mainframe",
+                   "Access Management"
+                ],
+                "start":1601510400,
+                "end":0,
+                "current":true
+             },
+             {
+                "role":"User Administration",
+                "description":"Behörighetshantering och administration av användarkonton.",
+                "skills":[
+                   "Active Directory",
+                   "Exchange",
+                   "PowerShell"
+                ],
+                "start":1420070400,
+                "end":1601510400,
+                "current":false
+             },
+             {
+                "role":"IT Service Desk",
+                "description":"Hjälpa anställda med alla möjliga IT-relaterade problem.",
+                "skills":[
+                   "Kundbemötande"
+                ],
+                "start":1391212800,
+                "end":1420070400,
+                "current":false
+             }
+          ]
+       },
+       {
+          "company":"Tieto / Wise IT",
+          "location":"Stockholm",
+          "img":"",
+          "pos":[
+             {
+                "role":"IT Service Desk",
+                "description":"Kontrakt via Wise IT - Support för tjänstebolaget Sodexo.",
+                "skills":[
+                   
+                ],
+                "start":1380585600,
+                "end":1391212800,
+                "current":false
+             }
+          ]
+       },
+       {
+          "company":"IBM",
+          "location":"Dublin, Irland",
+          "img":"",
+          "pos":[
+             {
+                "role":"User Administration",
+                "description":"Behörighetshantering och administration av användarkonton.",
+                "skills":[
+                   
+                ],
+                "start":1356998400,
+                "end":1377993600,
+                "current":false
+             },
+             {
+                "role":"IT Service Desk",
+                "description":"Behörighetshantering och administration av användarkonton.",
+                "skills":[
+                   
+                ],
+                "start":1306886400,
+                "end":1356998400,
+                "current":false
+             }
+          ]
+       }
+    ]
+ }

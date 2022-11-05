@@ -1,0 +1,13 @@
+body{
+    background-color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header,
+img,
+footer,
+.hidden-option
+{
+    display: none;
+}
+
