@@ -30,11 +30,16 @@ function displayCV(data){
 
         console.log(work[i].company)
 
+        h2.setAttribute("id","company-" + i)
         h2.innerText = work[i].company;
         small.innerText = work[i].location;
 
-        container.appendChild(h2)
-        container.appendChild(small)
+        container.appendChild(h2);
+        container.appendChild(small);
+
+        const header = document.querySelector("#company-" + i);
+
+        header.prepend(icon);
 
 
         /* for each role */
