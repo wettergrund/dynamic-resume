@@ -1,79 +1,89 @@
-let roleid = 1;
+let roleId = 1;
 
-async function getMyCV(){
+getCVData()
+
+async function getCVData(){
 
     await fetch('data.json')
 
-    let response = await fetch('data.json');
-    let data = await response.json();
+    const response = await fetch('data.json');
+    const data = await response.json();
     
-    displayEDU(data)
-    displayCV(data)
+    displayEducations(data);
+    displayEmployments(data);
 }
 
 toMs = (seconds) => new Date(seconds * 1000);
 
-function displayCV(data){
-    const container = document.querySelector('.work-container')
+function displayEmployments(data){
+    const workContainer = document.querySelector('.work-container');
 
 
     // For-loop to display data for each employer
     const employer = data.work
 
     for (let i = 0; i < employer.length; i++) {
+
         // Generate company header and location
-        generateElement('h2',employer[i].company,container,'id',"company-" + i)
-        generateElement('small',employer[i].location,container)
+        generateElement('h2' , employer[i].company,workContainer , 'id',"company-" + i);
+        generateElement('small' , employer[i].location , workContainer);
 
         // Generate company icon
+        const workId = document.querySelector("#company-" + i);
         const icon = document.createElement('img');
-        icon.setAttribute("class","company-icon")
-        icon.setAttribute("alt", employer[i].company + " logotyp")
-        icon.setAttribute("src", "images/" + employer[i].img)
-        const header = document.querySelector("#company-" + i);
-        header.prepend(icon);
+        icon.setAttribute("class" , "company-icon");
+        icon.setAttribute("alt" , employer[i].company + " logotyp");
+        icon.setAttribute("src" , "images/" + employer[i].img);
+        
+        workId.prepend(icon);
 
-        // forEach-loop to display position(s) at each 
-        let positions = employer[i].positions
+        // loop to display position(s) at each employer
+        let positions = employer[i].positions;
 
         positions.forEach(position => {
-            
-            const startYear = returnMonth(toMs(position.start).getUTCMonth()) + " " + toMs(position.start).getUTCFullYear();
-            endYear = () => (position.current) ? "tills vidare" : returnMonth(toMs(position.end).getUTCMonth()) + " " + toMs(position.end).getUTCFullYear();
+            const startYear = returnMonth(toMs(position.start).getUTCMonth()) + " " + toMs(position.start).getUTCFullYear(),
+                  endYear = () => (position.current) ? "tills vidare" : returnMonth(toMs(position.end).getUTCMonth()) + " " + toMs(position.end).getUTCFullYear();
 
             // Generate role header, working years and description
-            generateElement('h3',position.role,container)
-            generateElement('small',`${startYear} - ${endYear()}`,container)
-            generateElement('p', position.description, container)
+            generateElement('h3' , position.role , workContainer);
+            generateElement('small' , `${startYear} - ${endYear()}` , workContainer);
+            generateElement('p' , position.description , workContainer);
 
-            generateSkills(position.skills , container)
-
+            generateSkills(position.skills , workContainer);
         });
     };
 };
 
 
-function displayEDU(data){
-    const container = document.querySelector('.edu-container');
-    let edu = data.edu;
+function displayEducations(data){
+    const eduContainer = document.querySelector('.edu-container');
+    const edu = data.edu;
 
     for (let i = 0; i < edu.length; i++) {
 
         // Generate education header and years
-        generateElement('h2', edu[i].school, container)
-        generateElement('small', edu[i].location, container)
+        generateElement('h2', edu[i].school , eduContainer , 'id',"school-" + i);
+        generateElement('small' , edu[i].location , eduContainer);
 
-        const eduYears = [toMs(edu[i].start).getUTCFullYear(),toMs(edu[i].end).getUTCFullYear()];
+        // Generate school icon
+        const schoolId = document.querySelector("#school-" + i);
+        const icon = document.createElement('img');
+        icon.setAttribute("class" , "company-icon");
+        icon.setAttribute("alt" , edu[i].school + " logotyp");
+        icon.setAttribute("src" , "images/" + edu[i].img)
+
+        schoolId.prepend(icon);
+
+        const startYear = toMs(edu[i].start).getUTCFullYear(),
+              endYear = toMs(edu[i].end).getUTCFullYear();
 
         // Generate education years and description
-        generateElement('small', ` | ${eduYears[0]} - ${eduYears[1]} ` , container)
-        generateElement('p', edu[i].description, container)
+        generateElement('small' , ` | ${startYear} - ${endYear} ` , eduContainer);
+        generateElement('p' , edu[i].description , eduContainer);
 
-        generateSkills(edu[i].skills, container)
+        generateSkills(edu[i].skills , eduContainer);
     }
 }
-
-getMyCV()
 
 function returnMonth(month){
     const months = ["Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"];
@@ -87,12 +97,10 @@ function generateElement(element, content, parent, att, val, att2, val2){
     element.innerText = content;
 
     if(att !== undefined){
-        console.log("Hello");
-        element.setAttribute(att,val)
+        element.setAttribute(att,val);
     }
     if(att2 !== undefined){
-        console.log("Hello");
-        element.setAttribute(att2,val2)
+        element.setAttribute(att2,val2);
     }
     parent.appendChild(element);
 }
@@ -101,16 +109,16 @@ function generateSkills(skills, container){
     // Function to generate skill tags
 
     if(skills.length > 0){
+        
         // Crate area for skill tags
-        generateElement('div', '', container,'class','skill-tags','id',`position-${roleid}`);
-
-        const skillContainer = document.querySelector(`#position-${roleid}`);
+        generateElement('div' , '' , container , 'class' , 'skill-tags' , 'id' , `position-${roleId}`);
+        
+        const skillContainer = document.querySelector(`#position-${roleId}`);
         
         skills.forEach(skill => {
-            generateElement('div',skill,skillContainer,'class','tag')
+            generateElement('div' , skill , skillContainer , 'class' , 'tag');
         });
 
-        roleid++;
-        
+        roleId++;
     }
 }

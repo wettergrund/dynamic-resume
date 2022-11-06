@@ -2,13 +2,19 @@
     "edu":[
        {
           "school":"Chas Academy",
-          "img":"",
+          "img":"chas.png",
           "start":1661990400,
           "end":1717200000,
           "subject":"Fullstackutvecklare .NET",
           "description":"Fullstackutveckling med fokus på .NET/C#, men täcker även HTML, CSS, JS och agila metoder.",
           "location":"Stockholm",
-          "skills":[".NET","C#","HTML","CSS","JavaScript"],
+          "skills":[
+            ".NET",
+            "C#",
+            "JavaScript",
+            "HTML",
+            "CSS"
+         ],
           "current":true
        }
     ],
@@ -61,9 +67,7 @@
              {
                 "role":"IT Service Desk",
                 "description":"Kontrakt via Wise IT - Support för tjänstebolaget Sodexo.",
-                "skills":[
-                   
-                ],
+                "skills":[],
                 "start":1380585600,
                 "end":1391212800,
                 "current":false
@@ -78,9 +82,7 @@
              {
                 "role":"User Administration",
                 "description":"Behörighetshantering och administration av användarkonton.",
-                "skills":[
-                   
-                ],
+                "skills":[],
                 "start":1356998400,
                 "end":1377993600,
                 "current":false
@@ -88,9 +90,7 @@
              {
                 "role":"IT Service Desk",
                 "description":"Behörighetshantering och administration av användarkonton.",
-                "skills":[
-                   
-                ],
+                "skills":[],
                 "start":1306886400,
                 "end":1356998400,
                 "current":false

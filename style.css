@@ -120,6 +120,9 @@ h2[id^='company-']{
   transition: ease .5s;
 }
 
+.hide{
+  display: none;
+}
 
 .container{
   min-height: 50vh;
@@ -263,7 +266,7 @@ nav ul {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  gap: .5rem;
+  gap: .5rem .25rem;
 }
 
 .tag{
@@ -273,7 +276,7 @@ nav ul {
   background: var(--scnd-clr);
   padding: .25rem .5rem;
   /* border: 1px solid var(--primary-clr); */
-  border-radius: .25rem;
+  border-radius: 1rem;
 
   /* box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.137); */
 
@@ -520,7 +523,7 @@ footer a{
 }
 
 /* Dark mode */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
   --bg-clr: hsl(228, 6%, 17%);
   --primary-clr: hsl(26, 41%, 97%);
@@ -537,7 +540,7 @@ footer a{
     color: var(--primary-clr);
   }
 
-}
+} */
 
 
 /* 5. Animations */
