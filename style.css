@@ -82,7 +82,8 @@ small{
 
 }
 
-h2[id^='company-']{
+h2[id^='company-'],
+h2[id^='school-']{
   margin: 2rem 0 0 ;
 }
 
@@ -272,13 +273,13 @@ nav ul {
 .tag{
 
   font-size: .8rem;
-  font-weight: 600;
+  font-weight: 400;
   background: var(--scnd-clr);
   padding: .25rem .5rem;
-  /* border: 1px solid var(--primary-clr); */
+  /* border: 1px solid var(--accent-clr ); */
   border-radius: 1rem;
 
-  /* box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.137); */
+  box-shadow: 0 .125em .125em -.125em rgba(0, 0, 0, 0.137);
 
 }
 
