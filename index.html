@@ -22,9 +22,28 @@
 
   </head>
   <body>
+    <a class="hidden-option" href="#main-content">Hoppa till innehåll</a>
+    
+    <div class="modal-box modal-bg" id="contact-form">
+      <div>
+        <div>
+          <i class="fa-solid fa-phone"></i> 073-908 77 xx
+        </div>
+        <div>
+          <a href="mailto:jonas.wettergrund@chasacademy.se"><i class="fa-solid fa-at"></i> jonas@mail.se</a> 
+        </div>
+        <div>
+          <a href="https://www.linkedin.com/in/jonas-wettergrund-9bb35931/" target="_blank"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a> 
+        </div>
+        <div>
+          <a href="https://github.com/wettergrund/" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+        </div>
+        <a href="#close" title="close" class="close-btn contact-btn"><i class="fa-solid fa-circle-xmark"></i></a>
+      </div>
+    </div>
+    <!-- <div class="mouse-effect"></div> -->
     <section class="container">
 
-      <a class="hidden-option" href="#main-content">Hoppa till innehåll</a>
 
       <header>
         <div class="logo">.jw</div>
@@ -48,25 +67,11 @@
           </h2>
           <div class="button-area">
             <a href="cv.html" class="btn prim-btn">CV</a>
-            <a href="#contact-form" class="btn">Kontakt</a>
+            <a href="#" class="btn contact-btn" id="">Kontakt</a>
 
             <!-- Contact-modal -->
 
-            <div class="modal-box" id="contact-form">
-              <div>
-                <i class="fa-solid fa-phone"></i> 073-908 77 xx
-              </div>
-              <div>
-                <a href="mailto:jonas.wettergrund@chasacademy.se"><i class="fa-solid fa-at"></i> jonas@mail.se</a> 
-              </div>
-              <div>
-                <a href="https://www.linkedin.com/in/jonas-wettergrund-9bb35931/" target="_blank"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a> 
-              </div>
-              <div>
-                <a href="https://github.com/wettergrund/" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-              </div>
-              <a href="#close" title="close" class="close-btn"><i class="fa-solid fa-circle-xmark"></i></a>
-            </div>
+            
           </div>
 
         </section>
@@ -74,7 +79,7 @@
           <img src="images/genericcoder.png"/>
         </aside>
       </main>
-    </section>
+   
 
 
     <section class="testimonials">
@@ -84,11 +89,12 @@
       </article>
       <article class="card quote">
         <div><img src="images/genericperson.jpg" alt=""></div>
-        <div><p>- Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, corporis!</p></div>
+        <div><p>- Rekommenderar!</p></div>
       </article>
     </section>
 
-
+  </section>
+    
     <footer>
       <a href="https://www.linkedin.com/in/jonas-wettergrund-9bb35931/" target="_blank">
         <i class="fa-brands fa-linkedin-in"></i>
@@ -97,5 +103,9 @@
         <i class="fa-brands fa-github"></i>
       </a>
     </footer>
+
+
+
+    <script src="scripts/global.js"></script>
   </body>
 </html>

@@ -50,7 +50,7 @@ function displayGit(data){
 
             const infoId = 'info-' + name;
 
-            generateElement('img' , '' , cardContainer , 'src' , 'images/' + name + '.jpg')
+            generateElement('img' , '' , cardContainer , 'src' , 'images/' + name.toLowerCase() + '.jpg')
 
             generateElement('div' , '' , cardContainer , 'data-infoid' , id);
             const infoContainer = document.querySelector('[data-infoid="' + id + '"]');
@@ -68,38 +68,4 @@ function displayGit(data){
 
 
 
-}
-
-
-
-
-// const icon = document.createElement('img');
-// icon.setAttribute("class" , "company-icon");
-// icon.setAttribute("alt" , edu[i].school + " logotyp");
-// icon.setAttribute("src" , "images/" + edu[i].img)
-
-
-
-
-
-
-
-
-
-function generateElement(element, content, parent, att, val, att2, val2, att3, val3){
-    // Function for generating a new element. Support for three setAttributes
-
-    element = document.createElement(element);
-    element.innerText = content;
-
-    if(att !== undefined){
-        element.setAttribute(att,val);
-    }
-    if(att2 !== undefined){
-        element.setAttribute(att2,val2);
-    }
-    if(att3 !== undefined){
-        element.setAttribute(att3,val3);
-    }
-    parent.appendChild(element);
 }

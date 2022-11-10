@@ -90,20 +90,20 @@ function returnMonth(month){
     return months[month];
 }
 
-function generateElement(element, content, parent, att, val, att2, val2){
-    // Function for generating a new element. Support for two setAttributes
+// function generateElement(element, content, parent, att, val, att2, val2){
+//     // Function for generating a new element. Support for two setAttributes
 
-    element = document.createElement(element);
-    element.innerText = content;
+//     element = document.createElement(element);
+//     element.innerText = content;
 
-    if(att !== undefined){
-        element.setAttribute(att,val);
-    }
-    if(att2 !== undefined){
-        element.setAttribute(att2,val2);
-    }
-    parent.appendChild(element);
-}
+//     if(att !== undefined){
+//         element.setAttribute(att,val);
+//     }
+//     if(att2 !== undefined){
+//         element.setAttribute(att2,val2);
+//     }
+//     parent.appendChild(element);
+// }
 
 function generateSkills(skills, container){
     // Function to generate skill tags
