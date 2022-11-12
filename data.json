@@ -29,7 +29,8 @@
                 "description":"IT Security Specialist inom (IAM) Identity and Access Managament-området med fokus på Segregation of Duties och hantera audit-anmärkningar.",
                 "skills":[
                    "RACF",
-                   "Mainframe"
+                   "Mainframe",
+                   "IIQ"
                 ],
                 "start":1601510400,
                 "end":0,
@@ -67,7 +68,7 @@
              {
                 "role":"IT Service Desk",
                 "description":"Kontrakt via Wise IT - Support för tjänstebolaget Sodexo.",
-                "skills":[],
+                "skills":["Kundbemötande"],
                 "start":1380585600,
                 "end":1391212800,
                 "current":false
@@ -82,15 +83,15 @@
              {
                 "role":"User Administration",
                 "description":"Behörighetshantering och administration av användarkonton.",
-                "skills":[],
+                "skills":["RACF"],
                 "start":1356998400,
                 "end":1377993600,
                 "current":false
              },
              {
                 "role":"IT Service Desk",
-                "description":"Behörighetshantering och administration av användarkonton.",
-                "skills":[],
+                "description":"Support för en skandinavisk bank.",
+                "skills":["Kundbemötande"],
                 "start":1306886400,
                 "end":1356998400,
                 "current":false

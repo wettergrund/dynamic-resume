@@ -42,3 +42,6 @@ btn.addEventListener('mouseover' , function(e){
     
 
 })
+
+
+// const card = document.querySelector('.card')
