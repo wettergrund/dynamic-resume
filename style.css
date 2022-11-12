@@ -63,6 +63,8 @@ h2 {
   max-width: 90vw;
   font-weight: 300;
   font-size: 1.5rem;
+
+  z-index: 1;
   
 }
 
@@ -123,6 +125,9 @@ h2[id^='school-']{
 
 .hide{
   display: none;
+}
+.not-visible{
+  visibility: hidden;
 }
 
 .container{
@@ -230,7 +235,6 @@ nav ul {
 }
 
 .about-me{
-  position: relative;
   display: inline-block;
 
   padding: 2em 2em;
@@ -364,6 +368,10 @@ footer a{
   background: var(--bg-clr);
   border-radius: 1rem;
   box-shadow: 0 1rem 1rem -1rem rgba(0, 0, 0, 0.30);
+  /* background-image:  linear-gradient( 100deg, rgba(255, 255, 255, 0), rgba(255, 0, 0, 0.5) 50%, rgba(255, 255, 255, 0) 80% );
+  background-position: 200px 0; 
+  background-size: 200px 100%;
+  background-repeat: no-repeat; */
 }
 
 .card > div:first-child{
@@ -381,6 +389,8 @@ footer a{
   object-fit: cover;
 
   border-right: 0.125rem solid var(--bg-clr);
+
+
 }
 
 .card .btn{
@@ -391,7 +401,7 @@ footer a{
 
 
 
-/* Additional box styling */
+/* Additional card styling */
 
 .beige{
   background-color: var(--scnd-clr);
@@ -417,6 +427,60 @@ footer a{
   opacity: .05;
 }
 
+.card:empty{
+  background: 
+  linear-gradient( 100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 80% ),
+  linear-gradient( lightgray 100%, transparent 0 ),
+  linear-gradient( lightgray 1.25rem, transparent 0 );
+ 
+
+  background-repeat: no-repeat;
+
+		background-size:
+    50px 100%, 
+			40% 100%, 
+			150px 250px;
+	
+
+  		background-position:
+			0 0,
+			0 0, 
+			60% 100px;
+	
+
+		animation: loading 1s infinite;
+}
+
+#loading{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 50vh;
+
+  pointer-events: none;
+
+  /* background: hsla(0, 0%, 0%, 0.5); */
+  z-index: 2;
+
+}
+#loading > *{
+  width:  fit-content;
+  height: fit-content;
+
+  padding: .5em 1em;
+
+  background: var(--accent-clr);
+
+  border-radius: 5px;
+  /* box-shadow: 0 1rem 1rem -1rem rgba(0, 0, 0, 0.30); */
+
+}
 
 
 
@@ -438,6 +502,8 @@ footer a{
 
   
   /* animation: modal .5s ease-in-out; */
+
+  z-index: 2;
 
 
 }
@@ -554,7 +620,7 @@ footer a{
 }
 
 /* Dark mode */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
   --bg-clr: hsl(228, 6%, 17%);
   --primary-clr: hsl(26, 41%, 97%);
@@ -571,7 +637,7 @@ footer a{
     color: var(--primary-clr);
   }
 
-}
+} */
 
 
 /* 5. Animations */
@@ -595,5 +661,14 @@ footer a{
 @keyframes rotate {
   50%{
     transform: scale(1.1);
+  }
+}
+
+@keyframes loading {
+  to {
+    background-position:
+    100% 0, 
+    0 0,
+    60% 100px;
   }
 }
