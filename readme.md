@@ -6,9 +6,10 @@
 
 ### My projects
 -  [☁ Weather app]()
+    -   [Repository](https://github.com/wettergrund/Weather-app)
+    -   [Page](https://wettergrund.github.io/Weather-app/)
 -  [🎲 Memory]()
--  [🔢 Guess number]()
--  []()
--  []()
+    -   [Repository](https://github.com/wettergrund/memory)
+    -   [Page](https://wettergrund.github.io/memory/)
 
 
