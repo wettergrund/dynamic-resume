@@ -34,14 +34,61 @@ document.addEventListener('click',function(e){
 
 
 
-const btn = document.querySelector('.btn')
+// const btn = document.querySelector('.btn')
 
-btn.addEventListener('mouseover' , function(e){
-    console.log(e);
+// btn.addEventListener('mouseover' , function(e){
+//     console.log(e);
 
     
 
-})
+// })
 
 
 // const card = document.querySelector('.card')
+
+document.addEventListener('mousemove',function(e){
+
+    const target = e.target.classList;
+  
+    
+
+
+
+
+    if(target.contains('card')){
+        const cardWidth = e.target.clientWidth;
+        const cardHeight = e.target.clientHeight;
+
+
+        // console.log(e.target)
+        const distance = e.target.getBoundingClientRect();
+        
+        const mouseX = e.clientX - distance.left,
+              mouseY = e.clientY - distance.top;
+
+                    
+          
+        //   console.log(mouseX)
+        //   console.log(mouseY)
+        
+            const xPercent = Math.abs(((mouseX / cardWidth) * 100) -100),
+                    yPercent = Math.abs(((mouseY / cardHeight) * 100) -100);
+            const xFraction = (xPercent / 100) - .5,
+                    yFraction = (yPercent / 100) - .5;
+
+                        // console.log(xFraction)
+                        // console.log(yDecimal)
+
+        const bgPos = e.target.style.backgroundPosition
+        
+        e.target.style.backgroundPosition = xPercent + '% 0';
+        e.target.style.transform =  'perspective(500px) rotateY(' + xFraction + 'deg) rotateX(' + yFraction + 'deg)';
+
+
+        setTimeout(() => {
+            e.target.style.backgroundPosition = '0 0';
+        }, 1000)
+    }
+    // console.log(target.contains('card'));
+
+})
