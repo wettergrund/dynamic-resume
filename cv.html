@@ -21,13 +21,17 @@
 
     <!-- icons -->
     <script src="https://kit.fontawesome.com/c3cb13092e.js" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+    
   </head>
   <body>
     
     <a class="hidden-option" href="#main-content">Hoppa till innehåll</a>
 
-    <div class="modal-box modal-bg " id="contact-form">
-      <a href="#close" title="close" class="close-btn contact-btn"><i class="fa-solid fa-circle-xmark"></i></a>
+    <div class="modal-box modal-bg" id="contact-form">
       <div>
         <div>
           <i class="fa-solid fa-phone"></i> 073-908 77 xx
@@ -46,51 +50,48 @@
     </div>
 
     <div class="container">
-    <header>
-      <div class="logo"><a href="index.html">.jw</a></div>
-      <nav>
-        <ul>
-          <li class="navbar"><a href="index.html">Hem</a></li>
-          <li class="navbar"><a href="#" id="current-page">CV</a></li>
-          <li class="navbar"><a href="portfolio.html">Portfolio</a></li>
-          <li class="navbar"><a href="interests.html">Intressen</a></li>
-        </ul>
-      </nav>
-    </header>
 
-    <main class="grid-page">
-      <section class="content-area">
-        <h1 id="main-content">CV</h1>
-        <section class="edu-container">
-          <h2>Utbildning</h2>
+      <header>
+        <div class="logo"><a href="index.html">.jw</a></div>
+        <nav>
+          <ul>
+            <li class="navbar"><a href="index.html">Hem</a></li>
+            <li class="navbar"><a href="#" id="current-page">CV</a></li>
+            <li class="navbar"><a href="portfolio.html">Portfolio</a></li>
+            <li class="navbar"><a href="interests.html">Intressen</a></li>
+          </ul>
+        </nav>
+      </header>
 
+      <main class="grid-page">
+        <section class="content-area">
+          <h1 id="main-content">CV</h1>
+          <section class="edu-container">
+            <h2>Utbildning</h2>
+
+          </section>
+          <section class="work-container">
+            <h2>Arbete</h2>
+
+          </section>
         </section>
-        <section class="work-container">
-          <h2>Arbete</h2>
 
-        </section>
-      </section>
+        <aside>
+          <div class="about-me beige">
+            <h2>Om mig<img class="profile-picture" src="images/Portratt.PNG" alt="Bild på Jonas"></h2>
+              <p>  
+              Jag heter Jonas och utbildar mig till fullstackutvecklare med inriktning <b>.NET</b> tillsammans med HTML, CSS och JavaScript.
+              <br><br>
+              Tillgänglighet och användarupplevelse är viktigt för mig samtidigt som jag brinner för att skapa effektiva backend-system.
+              <br><br>
+              Är ivrig på att få lära mig så mycket som möjligt och söker därför en utmanande LIA-plats inför hösten 2023.
+              </p>
 
-      <aside>
-        <div class="about-me beige">
-          <h2>Om mig<img class="profile-picture" src="images/Portratt.PNG" alt="Bild på Jonas"></h2>
-            <p>  
-            Jag heter Jonas och utbildar mig till fullstackutvecklare med inriktning <b>.NET</b> tillsammans med HTML, CSS och JavaScript.
-            <br><br>
-            Tillgänglighet och användarupplevelse är viktigt för mig samtidigt som jag brinner för att skapa effektiva backend-system.
-            <br><br>
-            Är ivrig på att få lära mig så mycket som möjligt och söker därför en utmanande LIA-plats inför hösten 2023.
-            </p>
-
-            <a href="#" class="btn contact-btn small-btn">Kontakt</a>
-
-            <!-- Contact-modal -->
-
-            
-          </div>
-      </aside>
-
-    </main>
+              <a href="#" class="btn contact-btn small-btn">Kontakt</a>
+              
+            </div>
+        </aside>
+      </main>
     
   </div>
 
@@ -102,8 +103,6 @@
           <i class="fa-brands fa-github"></i>
         </a>
     </footer>
-
-
 
     <script src="scripts/global.js"></script>
     <script src="scripts/cv.js"></script>

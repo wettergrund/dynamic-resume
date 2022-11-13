@@ -6,8 +6,10 @@ body{
 header,
 img,
 footer,
+.btn,
 .hidden-option,
-.skill-tags
+.skill-tags,
+#contact-form
 {
     display: none;
 }

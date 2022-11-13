@@ -1,10 +1,10 @@
+/* To reduce repetition function generateElement() is located in global.js */
+
 let roleId = 1;
 
-getCVData()
+getCVData();
 
 async function getCVData(){
-
-    // await fetch('data.json')
 
     const response = await fetch('data.json');
     const data = await response.json();
@@ -20,7 +20,7 @@ function displayEmployments(data){
 
 
     // For-loop to display data for each employer
-    const employer = data.work
+    const employer = data.work;
 
     for (let i = 0; i < employer.length; i++) {
 
@@ -70,7 +70,7 @@ function displayEducations(data){
         const icon = document.createElement('img');
         icon.setAttribute("class" , "company-icon");
         icon.setAttribute("alt" , edu[i].school + " logotyp");
-        icon.setAttribute("src" , "images/" + edu[i].img)
+        icon.setAttribute("src" , "images/" + edu[i].img);
 
         schoolId.prepend(icon);
 
@@ -89,21 +89,6 @@ function returnMonth(month){
     const months = ["Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"];
     return months[month];
 }
-
-// function generateElement(element, content, parent, att, val, att2, val2){
-//     // Function for generating a new element. Support for two setAttributes
-
-//     element = document.createElement(element);
-//     element.innerText = content;
-
-//     if(att !== undefined){
-//         element.setAttribute(att,val);
-//     }
-//     if(att2 !== undefined){
-//         element.setAttribute(att2,val2);
-//     }
-//     parent.appendChild(element);
-// }
 
 function generateSkills(skills, container){
     // Function to generate skill tags

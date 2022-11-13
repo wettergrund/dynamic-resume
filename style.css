@@ -176,7 +176,6 @@ nav ul {
 }
 
 #current-page{
-
   border-bottom: .125rem solid var(--accent-clr);
 }
 
@@ -184,7 +183,6 @@ nav ul {
   padding: 2rem 1rem;
   order: 1;
 }
-
 
 .button-area {
   text-align: center;  
@@ -275,16 +273,13 @@ nav ul {
 }
 
 .tag{
+  padding: .25rem .5rem;
 
   font-size: .8rem;
-  font-weight: 400;
+  
   background: var(--scnd-clr);
-  padding: .25rem .5rem;
-  /* border: 1px solid var(--accent-clr ); */
   border-radius: 1rem;
-
   box-shadow: 0 .125em .125em -.125em rgba(0, 0, 0, 0.137);
-
 }
 
 .work-container > :last-child,
@@ -433,28 +428,26 @@ footer a{
 }
 
 .card:empty{
+  /* Adding load effect while element is empty */
   background: 
-  linear-gradient( 100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 80% ),
-  linear-gradient( lightgray 100%, transparent 0 ),
-  linear-gradient( lightgray 1.25rem, transparent 0 );
- 
-  pointer-events: none;
-
+  linear-gradient( 95deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 80% ), /* Reflection effect */
+  linear-gradient( lightgray 100%, transparent 0 ), /* Image placeholder */
+  linear-gradient( lightgray 1.25rem, transparent 0 ); /* Text placeholder */
+  
+  background-size:
+  50px 100%, 
+  40% 100%, 
+  150px 250px;
+	
+  background-position:
+  0 0,
+  0 0, 
+  60% 100px;
+	
   background-repeat: no-repeat;
-
-		background-size:
-    50px 100%, 
-			40% 100%, 
-			150px 250px;
-	
-
-  		background-position:
-			0 0,
-			0 0, 
-			60% 100px;
-	
-
-		animation: loading 1s infinite;
+  
+  pointer-events: none;
+  animation: loading 1s infinite;
 }
 
 #loading{
@@ -471,7 +464,6 @@ footer a{
 
   pointer-events: none;
 
-  /* background: hsla(0, 0%, 0%, 0.5); */
   z-index: 2;
 
 }
@@ -484,7 +476,7 @@ footer a{
   background: var(--accent-clr);
 
   border-radius: 5px;
-  /* box-shadow: 0 1rem 1rem -1rem rgba(0, 0, 0, 0.30); */
+  box-shadow: 0px .5em .5em -.5em rgba(0, 0, 0, 0.137);
 
 }
 
@@ -499,25 +491,16 @@ footer a{
   top: 0;
   left: 0;
 
-  /* transform: translate(50%, 50%); */
-
   width: 100%;
   height: 100vh;
  
-
-
-  
-  /* animation: modal .5s ease-in-out; */
-
   z-index: 2;
-
 
 }
 .modal-visible{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-content: center; */
   gap: 1rem;
 
   background: hsl(0, 0%, 0%, .5);
@@ -626,7 +609,7 @@ footer a{
 }
 
 /* Dark mode */
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
   --bg-clr: hsl(228, 6%, 17%);
   --primary-clr: hsl(26, 41%, 97%);
@@ -643,7 +626,7 @@ footer a{
     color: var(--primary-clr);
   }
 
-} */
+}
 
 
 /* 5. Animations */
@@ -666,12 +649,12 @@ footer a{
 
 @keyframes rotate {
   50%{
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(30deg);
   }
 }
 
 @keyframes loading {
-  to {
+  100% {
     background-position:
     100% 0, 
     0 0,
