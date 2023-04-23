@@ -226,7 +226,7 @@ nav ul {
   min-height: 20rem;
   padding: 2rem 1rem;
   
-  background: hsl(0, 0%, 59.2%);
+  background: hsl(240, 1%, 42%);
   color: var(--bg-clr);
 
   box-shadow: inset 0 .5 .5rem rgba(0, 0, 0, 0.30);
@@ -356,10 +356,14 @@ footer a{
 
 .btn-container{
   display: flex;
+  
   flex-wrap: wrap;
   flex-direction: row;
   flex: 1;
   gap: 1rem;
+}
+.btn-container:last-child{
+  margin-bottom: 1rem;
 }
 
 .prim-btn {
@@ -390,10 +394,12 @@ footer a{
   position: relative;
   overflow: hidden;
 
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 100%;
+  /* grid-template-columns: 40% 60%; */
+
 
   max-width: 50ch;
-  height: 20ch;
+  min-height: 20ch;
 
   background: var(--bg-clr);
   border-radius: 1rem;
@@ -417,7 +423,7 @@ footer a{
 }
 
 .card img{
-  /* display: none; */
+  display: none;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -456,7 +462,7 @@ footer a{
 }
 
 .prim-card{
-  background-color: var(--scnd-clr);
+  background-color: var(--bg-clr);
   border-radius: 1rem;
   box-shadow: 0px .5em .5em -.5em rgba(0, 0, 0, 0.137);
   color: var(--primary-clr);
@@ -477,6 +483,24 @@ footer a{
   background-repeat: no-repeat;
 
   opacity: .05;
+}
+
+.git:after{
+  /* Adding a quote symbol to card */
+  pointer-events: none;
+  content: '';
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  background-image: url('images/github-mark.png');
+  background-position: 100% -20%;
+  background-size: 50%;
+  background-repeat: no-repeat;
+
+  opacity: .05;
+  z-index: -1;
 }
 
 .card:empty{
@@ -670,6 +694,18 @@ footer a{
     text-align: left;
     justify-content: left;
     gap: 1rem;
+  }
+}
+
+@media (min-width: 400px) {
+
+  .card{
+    
+    grid-template-columns: 40% 60%;
+
+  }
+  .card img{
+    display: block;
   }
 }
 

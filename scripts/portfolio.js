@@ -35,7 +35,7 @@ function displayGit(data){
             const { id, name, description, html_url, has_pages, homepage, topics}  = data[repoIndex];
 
             // Create card for each repository
-            generateElement('article' , '' , mainContainer, 'class' , 'card beige' , 'data-contid' , id);
+            generateElement('article' , '' , mainContainer, 'class' , 'card prim-card git' , 'data-contid' , id);
             const cardContainer = document.querySelector('[data-contid="' + id + '"]');
 
             generateElement('img' , '' , cardContainer , 'src' , 'images/' + name.toLowerCase() + '.jpg' , 'alt' , 'bild på ' + name);
