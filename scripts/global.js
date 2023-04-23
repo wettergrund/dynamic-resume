@@ -16,6 +16,12 @@ function generateElement(element, content, parent, att, val, att2, val2, att3, v
     parent.appendChild(element);
 }
 
+function replacePhoneWithText() {
+    const phoneElements = document.querySelectorAll('.phone');
+    phoneElements.forEach(element => {
+      element.textContent = '073 908 77 74';
+    });
+  }
 
 const contactBtn = document.querySelectorAll('.contact-btn');
 
@@ -62,3 +68,5 @@ document.addEventListener('mousemove',function(e){
     }
 
 })
+
+replacePhoneWithText();

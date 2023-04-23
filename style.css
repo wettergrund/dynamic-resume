@@ -123,7 +123,7 @@ h2[id^='school-']{
   translate: 0 -25%;   
   transition: ease .5s;
 }
-
+.print,
 .hide{
   display: none;
 }

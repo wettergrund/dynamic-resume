@@ -8,6 +8,7 @@
 
     <!-- style -->
     <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" media="print" href="styleprint.css" />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -33,10 +34,10 @@
     <div class="modal-box modal-bg" id="contact-form">
       <div>
         <div>
-          <i class="fa-solid fa-phone"></i> 073-908 77 74
+          <a href="mailto:jonas@wettergrund.net"><i class="fa-solid fa-at"></i> jonas@wettergrund.net</a> 
         </div>
         <div>
-          <a href="mailto:jonas@wettergrund.net"><i class="fa-solid fa-at"></i> jonas@wettergrund.net</a> 
+          <i class="fa-solid fa-phone"></i> <small class="phone"></small>
         </div>
         <div>
           <a href="https://www.linkedin.com/in/jonas-wettergrund-9bb35931/" target="_blank"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a> 
@@ -63,7 +64,7 @@
       </header>
 
 
-      <main class="grid-page">
+      <main class="grid-page no-print">
         <section class="content-area">
           <i>
             Välkommen till Jonas portfolio
@@ -98,8 +99,16 @@
 
       </section>
       <div class="grid-page">
+
       <section class="content-area ">
+        <div class="print">
+          <p>Spara på miljön, spara som PDF 😀</p>
+          <p><b>Mail:</b>jonas@wettergrund.net</p>
+          <p><b>Tel:</b><small class="phone"></small></p>
+
+        </div>
         <h1 id="cv">CV</h1>
+        
         <section class="edu-container">
           <h2>Utbildning</h2>
 
@@ -108,6 +117,9 @@
           <h2>Arbete</h2>
 
         </section>
+        <a href="#" onclick="window.print()">
+          <i class="fa-solid fa-print"></i>
+        </a>
       </section>
       <aside>
         <div class="about-me beige">

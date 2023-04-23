@@ -1,16 +1,27 @@
 body{
     background-color: #fff;
     font-family: 'Courier New', Courier, monospace;
+    
 }
 
-header,
+.print{
+    display: block;
+}
+
+i,
 img,
 footer,
+header,
+aside,
+.no-print,
 .btn,
 .hidden-option,
 .skill-tags,
+.testimonials,
+.about-me,
 #contact-form
 {
     display: none;
+    visibility: hidden;
 }
 
