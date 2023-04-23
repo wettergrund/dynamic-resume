@@ -45,7 +45,7 @@ function displayGit(data){
 
             
             generateElement('h3' , name.toUpperCase() , infoContainer);
-            generateSkills(topics, infoContainer);
+            generateTags(topics, infoContainer);
             generateElement('p' , description , infoContainer);
 
             
@@ -69,7 +69,7 @@ function displayGit(data){
 }
 
 
-function generateSkills(skills, container){
+function generateTags(skills, container){
     // Function to generate skill tags
 
     if(skills.length > 0){
@@ -78,9 +78,16 @@ function generateSkills(skills, container){
         generateElement('div' , '' , container , 'class' , 'skill-tags' , 'id' , `position-${roleId}`);
         
         const skillContainer = document.querySelector(`#position-${roleId}`);
+        console.log("skill");
         
         skills.forEach(skill => {
-            generateElement('div' , skill , skillContainer , 'class' , 'tag');
+            if(skill === "csharp"){
+                skill = "C#"
+            }
+            
+
+                generateElement('div' , skill.toUpperCase(), skillContainer , 'class' , 'tag');
+            
         });
 
         roleId++;
