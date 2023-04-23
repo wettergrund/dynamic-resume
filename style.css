@@ -27,7 +27,8 @@
     --accent-clr: #d78b30; */
 
     --prim-font: "Montserrat", sans-serif;
-    background-color: hsl(0, 0%, 50%);
+    scroll-behavior: smooth;
+    background-color: hsl(0, 0%, 83.5%);
     /* background-color: #f5f1e9; */
   }
 
@@ -185,14 +186,19 @@ nav ul {
 }
 
 .button-area {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   text-align: center;  
+  gap: .5rem;
   margin-bottom: 1rem;
 }
 
 
 .side-image {
   display: none;
-  width: 80%;
+  width: 70%;
   min-width: 500px;
 }
 
@@ -210,16 +216,18 @@ nav ul {
 
 .testimonials{
   display: flex;
+  flex-direction: column;
 
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem;
 
   min-height: 20rem;
   padding: 2rem 1rem;
   
-  background: hsl(240, 1%, 42%);
+  background: hsl(0, 0%, 59.2%);
+  color: var(--bg-clr);
 
   box-shadow: inset 0 .5 .5rem rgba(0, 0, 0, 0.30);
 }
@@ -228,7 +236,7 @@ nav ul {
   display: flex;
 
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   gap: 2rem;
 }
 
@@ -236,7 +244,7 @@ nav ul {
   display: inline-block;
 
   padding: 2em 2em;
-  margin: 0 1em;
+  margin: 1rem 1rem;
 }
 
 .cv-list{
@@ -272,12 +280,24 @@ nav ul {
   gap: .5rem .25rem;
 }
 
+
+
 .tag{
   padding: .25rem .5rem;
 
   font-size: .8rem;
   
   background: var(--scnd-clr);
+  border-radius: 1rem;
+  box-shadow: 0 .125em .125em -.125em rgba(0, 0, 0, 0.137);
+}
+
+.card .tag{
+  padding: .25rem .5rem;
+
+  font-size: .7rem;
+  
+  background: var(--bg-clr);
   border-radius: 1rem;
   box-shadow: 0 .125em .125em -.125em rgba(0, 0, 0, 0.137);
 }
@@ -318,7 +338,7 @@ footer a{
   
   margin-right: 0.5em;
   padding: 0.5em 1em;
-  min-width: 6em;
+  width: 8em;
 
   text-align: center;
   font-size: 1.25rem;
@@ -334,6 +354,13 @@ footer a{
   box-shadow: .125em .125em .25em rgba(0, 0, 0, 0.15);
 }
 
+.btn-container{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex: 1;
+  gap: 1rem;
+}
 
 .prim-btn {
   font-weight: 600;
@@ -347,6 +374,14 @@ footer a{
   font-size: .8rem;
 }
 
+.demo-btn{
+  font-weight: 600;
+  color: hsl(0, 0%, 100%);
+  background-color: var(--accent-clr);
+  border-color: var(--accent-clr);
+
+}
+
 /* 3.2 cards */
 
 .card{
@@ -357,7 +392,7 @@ footer a{
 
   grid-template-columns: 40% 60%;
 
-  width: 50ch;
+  max-width: 50ch;
   height: 20ch;
 
   background: var(--bg-clr);
@@ -382,6 +417,7 @@ footer a{
 }
 
 .card img{
+  /* display: none; */
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -392,12 +428,21 @@ footer a{
 
 
 }
+.card-right{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  gap: .5rem;
+}
 
 .card .btn{
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
+  position: relative;
+  margin: 0;
+  /* right: 1rem;
+  bottom: 1rem; */
 }
+
+
 
 
 
@@ -407,8 +452,15 @@ footer a{
   background-color: var(--scnd-clr);
   border-radius: 1rem;
   box-shadow: 0px .5em .5em -.5em rgba(0, 0, 0, 0.137);
+  color: var(--primary-clr);
 }
 
+.prim-card{
+  background-color: var(--scnd-clr);
+  border-radius: 1rem;
+  box-shadow: 0px .5em .5em -.5em rgba(0, 0, 0, 0.137);
+  color: var(--primary-clr);
+}
 
 .quote:after{
   /* Adding a quote symbol to card */
@@ -456,11 +508,11 @@ footer a{
   justify-content: center;
   align-items: center;
 
-  top: 0;
+  top: 10;
   left: 0;
 
-  width: 100vw;
-  height: 50vh;
+  width: 100%;
+  height: 100%; 
 
   pointer-events: none;
 
@@ -538,6 +590,7 @@ footer a{
   color: var(--accent-clr);
   text-shadow: 0 0.125rem .25rem rgba(0, 0, 0, 0.301);
 }
+
 .close-btn:hover{
   animation: rotate .5s ease-in-out;
 } 
@@ -567,7 +620,8 @@ footer a{
 
   main,
   .interest-section,
-  .laning-page {
+  .laning-page,
+  .grid-page {
     display: grid;
     grid-template-columns: 1fr 1fr;
     overflow: hidden;
@@ -579,9 +633,12 @@ footer a{
   }
 
   .content-area {
+    position: relative;
     margin: auto 5rem auto 10rem;
 
     order: -1;
+
+    
   }
 
   .content-area-right{
@@ -594,17 +651,25 @@ footer a{
   }
   
   .side-image{
+    position: relative;
     display: block;
   }
 
   .side-image img {
+    position: absolute;
     object-position: right;
-    object-fit: contain;
+    object-fit: cover;
     width: 100%;
+    bottom: 0;
   }
 
   .button-area {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     text-align: left;
+    justify-content: left;
+    gap: 1rem;
   }
 }
 
@@ -613,7 +678,9 @@ footer a{
   :root {
   --bg-clr: hsl(228, 6%, 17%);
   --primary-clr: hsl(26, 41%, 97%);
-  --scnd-clr: hsl(30, 20%, 50%);
+  --scnd-clr: hsl(0, 0%, 25.9%);
+
+  background-color: hsl(0, 0%, 29%);
   }
 
   body,
